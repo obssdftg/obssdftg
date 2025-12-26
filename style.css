@@ -1,0 +1,376 @@
+body {
+  font-family: Nunito Sans;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+header {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 40px;
+}
+
+header div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+nav b {
+  font-weight: 800;
+}
+
+nav {
+  border-top: 1px solid #4d4d4d;
+  border-bottom: 1px solid #4d4d4d;
+  padding: 25px 0;
+  margin: 5vh 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  gap: 10vw;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #000000;
+  padding: 10px 0;
+}
+
+.menu li a:hover {
+  color: #a8a8a8;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  place-items: center;
+}
+
+.card {
+  width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #fff;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.card-number {
+  font-weight: 600;
+  text-align: center;
+  font-size: 18px;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn {
+  margin-top: auto;
+  padding: 12px;
+  text-align: center;
+  background: #000;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+.meme {
+  max-width: 95%;
+  margin: 0 auto;
+  background: #fff;
+  text-align: left;
+  position: relative;
+  padding: 40px 20px;
+  box-sizing: border-box;
+  /* Убрали фиксированную width: 1100px; — теперь контейнер подстраивается под контент и экран */
+  min-height: 600px; /* Чтобы на мобильных не сжималось слишком сильно */
+  overflow: hidden; /* На случай, если что-то вылезет */
+}
+
+.big-d {
+  position: absolute;
+  left: 20px;
+  top: 70px;
+  font-size: 400px;
+  font-weight: bold;
+  line-height: 1;
+  opacity: 1;
+  transition: all 0.3s;
+}
+
+.price-list {
+  margin-top: 50px;
+  margin-left: 345px;
+  font-size: 22px;
+  line-height: 1.8;
+  transition: all 0.3s;
+}
+
+.dotted {
+  border-bottom: 2px dotted #000;
+  flex-grow: 1;
+  margin: 0 10px;
+}
+
+.row {
+  display: flex;
+  align-items: baseline;
+}
+
+.bottom-text {
+  text-align: center;
+  font-size: 100px;
+  font-weight: bold;
+  letter-spacing: 15px;
+  margin-top: 50px;
+  transition: all 0.3s;
+}
+
+/* Адаптивность */
+@media (max-width: 900px) {
+  .big-d {
+    position: static;
+    font-size: 300px;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .price-list {
+    margin-left: 0;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .bottom-text {
+    font-size: 70px;
+    letter-spacing: 10px;
+    margin-top: 40px;
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .big-d {
+    font-size: 220px;
+  }
+
+  .price-list {
+    font-size: 18px;
+  }
+
+  .bottom-text {
+    font-size: 50px;
+    letter-spacing: 8px;
+  }
+
+  .meme {
+    padding: 20px 10px;
+  }
+}
+
+@media (max-width: 400px) {
+  .big-d {
+    font-size: 180px;
+  }
+
+  .bottom-text {
+    font-size: 40px;
+    letter-spacing: 6px;
+  }
+}
+
+.faq-section {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.faq-title {
+  font-size: 72px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.faq-note {
+  font-size: 20px;
+  color: #000000;
+  margin-bottom: 50px;
+}
+
+.faq-accordion {
+  border-top: 1px solid #e0e0e0;
+}
+
+.faq-item {
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.faq-question {
+  width: 100%;
+  padding: 20px 0;
+  text-align: left;
+  background: none;
+  border: none;
+  font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #000;
+}
+
+.faq-icon {
+  font-size: 28px;
+  font-weight: 300;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  padding: 0 0;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding: 20px 0;
+}
+
+.faq-answer p {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #444;
+  margin: 0;
+  text-align: left;
+}
+
+.contacts-section {
+  max-width: 900px;
+  text-align: center;
+}
+
+.contacts-title {
+  font-size: 42px;
+  font-weight: 600;
+  margin-bottom: 60px;
+}
+
+.contacts-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px; /* расстояние между кнопками */
+  flex-wrap: wrap; /* на мобильных перенесутся в колонку, если нужно */
+}
+
+.contact-btn {
+  display: block;
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease;
+  margin-bottom: 80px;
+}
+
+.contact-btn:hover {
+  transform: scale(1.15);
+}
+
+.contact-btn img {
+  height: 100%;
+}
+
+@media (max-width: 1200px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 36px;
+  }
+
+  .faq-question {
+    font-size: 18px;
+    padding: 18px 0;
+  }
+
+  .faq-answer p {
+    font-size: 16px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .contacts-title {
+    font-size: 36px;
+    margin-bottom: 50px;
+  }
+
+  .contacts-icons {
+    gap: 40px;
+  }
+
+  .contact-btn {
+    width: 50px;
+    height: 50px;
+  }
+}
+
+footer {
+  background-color: #444;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  align-items: center;
+}
+
+footer img {
+  margin-top: 50px;
+  width: 300px;
+  max-width: 50vw;
+}
+footer p {
+  font-size: 14px;
+  color: #a8a8a8;
+}
